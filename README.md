@@ -96,4 +96,9 @@ shadowInactive: 7
 shadowLastChange: $(echo $(($(date "+%s")/60/60/24)))
 EO_LDIF
 ```
-[![Watch the video](https://github.com/johnyin123/simplekvm/raw/refs/heads/main/ui.jpg)](https://github.com/johnyin123/simplekvm/raw/refs/heads/main/demo.ogv)
+![ui](https://github.com/user-attachments/assets/4cc3f93d-8ee8-4e7a-ad5b-80eec341ba78)
+
+
+
+https://github.com/user-attachments/assets/276705f7-6299-410b-8290-a83422a55b1d
+
