@@ -95,3 +95,4 @@ shadowLastChange: $(echo $(($(date "+%s")/60/60/24)))
 EO_LDIF
 EOF
 ```
+[![Watch the video](https://github.com/johnyin123/simplekvm/raw/refs/heads/main/ui.jpg)](https://github.com/johnyin123/simplekvm/raw/refs/heads/main/demo.ogv)
