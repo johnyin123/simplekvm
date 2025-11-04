@@ -3,7 +3,7 @@ docker pull johnyinnews/simplekvm:trixie
 docker pull johnyinnews/slapd:trixie
 docker pull johnyinnews/etcd:trixie
 
-
+```
 META_SRV=simplekvm.registry.local
 meta_srv_addr=192.168.167.1
 
@@ -20,7 +20,8 @@ LDAP_PASSWORD='Pass4LDAP@docker'
 
 ETCD_SRV=etcd
 ETCD_PORT=2379
-
+```
+```
 cat <<EOF
 docker create --name ${ETCD_SRV} --restart always \\
  --network br-int \\
@@ -29,7 +30,8 @@ docker create --name ${ETCD_SRV} --restart always \\
  --env ETCD_LOG_LEVEL='warn'                          \\
  registry.local/simplekvm/etcd:trixie
 EOF
-
+```
+```
 cat <<EOF
 docker create --name ${LDAP_SRV} --restart always \\
  --network br-int \\
@@ -37,7 +39,8 @@ docker create --name ${LDAP_SRV} --restart always \\
  --env LDAP_PASSWORD=${LDAP_PASSWORD} \\
  registry.local/simplekvm/slapd:trixie
 EOF
-
+```
+```
 target=${simplekvm_dir}
 cat <<EOF
 ${target}/config
@@ -69,6 +72,8 @@ docker create --name simplekvm --restart always \\
  -v ${target}/client.pem:/etc/nginx/ssl/simplekvm.pem \\
  registry.local/simplekvm/simplekvm:trixie
 EOF
+```
+```
 cat <<'EOF'
 uid=test
 LDAP_PASSWORD=password
@@ -89,3 +94,4 @@ shadowInactive: 7
 shadowLastChange: $(echo $(($(date "+%s")/60/60/24)))
 EO_LDIF
 EOF
+```
