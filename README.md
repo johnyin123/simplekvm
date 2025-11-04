@@ -22,8 +22,6 @@ ETCD_SRV=etcd
 ETCD_PORT=2379
 
 cat <<EOF
-# ===================================================
-# ===================================================
 docker create --name ${ETCD_SRV} --restart always \\
  --network br-int \\
  --env ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379    \\
@@ -33,8 +31,6 @@ docker create --name ${ETCD_SRV} --restart always \\
 EOF
 
 cat <<EOF
-# ===================================================
-# ===================================================
 docker create --name ${LDAP_SRV} --restart always \\
  --network br-int \\
  --env LDAP_DOMAIN="myldap.internal" \\
@@ -44,15 +40,12 @@ EOF
 
 target=${simplekvm_dir}
 cat <<EOF
-# ===================================================
-# ===================================================
 ${target}/config
 ${target}/id_rsa
 ${target}/id_rsa.pub
 ${target}/ca.pem
 ${target}/client.key
 ${target}/client.pem
-# ===================================================
 # envs: LDAP_UID_FMT, LDAP_BASE_DN, EXPIRE_SEC
 # envs: DATA_DIR, ETCD_PREFIX, ETCD_SRV, ETCD_PORT, ETCD_CA, ETCD_KEY, ETCD_CERT, META_SRV, GOLD_SRV, CTRL_SRV, ACT_...
 # --env DATA_DIR=/home/simplekvm/data -v ${target}/data:/home/simplekvm/data  \\
@@ -77,7 +70,6 @@ docker create --name simplekvm --restart always \\
  registry.local/simplekvm/simplekvm:trixie
 EOF
 cat <<'EOF'
-# ===========================================
 uid=test
 LDAP_PASSWORD=password
 # ####################
