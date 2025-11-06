@@ -102,3 +102,14 @@ EO_LDIF
 
 https://github.com/user-attachments/assets/276705f7-6299-410b-8290-a83422a55b1d
 
+
+- [x] kvm host
+```
+virsh pool-create-as default dir --target /storage --print-xml | virsh pool-define /dev/stdin
+virsh pool-start default
+virsh pool-autostart default
+
+[ -f /sys/class/net/br-ext/bridge/bridge_id ] && echo "br-ext bridge exist ok"
+
+```
+
